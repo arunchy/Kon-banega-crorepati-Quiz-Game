@@ -1,10 +1,6 @@
-public class Main{
-
+public class Main {
 public static void main(String[] args) {
-    Signup Log=new Signup();
-    Log.signuppage();
+    Game g1=new Game();
+    g1.Gamepage(1);
 }
-
-
-
 }
