@@ -44,6 +44,7 @@ private JLabel img4;
 private JLabel img5;
 private JLabel img6;
 private JLabel img7;
+
 Random ran=new Random();
 private JOptionPane pal;
 public void signuppage(){
@@ -282,9 +283,13 @@ private class ButtonClickListener implements ActionListener{
          gender="";
        }
        char[] password=t5.getPassword();
-       System.out.println(password);
+       String pass="";
+       for (char c : password) {
+         pass=pass+c;
+       }
        String profile=filename.getText();
-        if( fullname.length()==0 && email.length()==0 && contact.length()==0 && age.length()==0 && gender.length()==0 && profile.length()==0){
+
+        if( fullname.length()==0 && email.length()==0 && contact.length()==0 && age.length()==0 && gender.length()==0 && profile.length()==0 && pass.length()==0){
          pal=new JOptionPane();
          pal.showMessageDialog(null,"Please fill all the input fields...");
 
@@ -298,7 +303,7 @@ private class ButtonClickListener implements ActionListener{
             pal=new JOptionPane();
             pal.showMessageDialog(null,"Your account has been sucessfully created");
             Home home=new Home();
-            home.Homepage();
+            home.Homepage(email,pass);
            }
            
          }

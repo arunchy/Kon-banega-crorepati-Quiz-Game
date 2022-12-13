@@ -25,6 +25,7 @@ public class Login {
     private Clip clip;
     private AudioInputStream sound;
     private File audio1;
+    int id;
    
  public void Loginpage(){
    frame1=new JFrame("Login Page");
@@ -148,8 +149,10 @@ private class ButtonClickListener implements ActionListener{
       ResultSet data=user.fetchdata(email, pass);
       try {
         if(data.next()==true){
+            id=data.getInt("uid");
+            frame1.dispose();
             Home home=new Home();
-            home.Homepage();
+            home.Homepage(email,pass);
         }else{
            
    try {

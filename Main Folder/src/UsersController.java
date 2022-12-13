@@ -23,8 +23,8 @@ public class UsersController {
     // public int updateStudent(Users users) {
     //     int id = users.getstd_id();
     //     String name = users.getStd_name();
-        //  String updateQuery = String.format(
-        //         "update tbl_student set std_name='%s' where std_id = %d", name, id);
+    //      String updateQuery = String.format(
+    //             "update tbl_student set std_name='%s' where std_id = %d", name, id);
     //     dbConnection = new DbConnection();
     //     int result = dbConnection.manipulate(updateQuery);
     //     return result;
@@ -35,5 +35,16 @@ public class UsersController {
         ResultSet data=dbConnection.retrieve(query);
         return data;
     }
-
+    public ResultSet fetchquestion(int id){
+        String query=String.format("SELECT * FROM questions WHERE Qid=%d",id);
+        dbConnection=new DbConnection();
+        ResultSet data=dbConnection.retrieve(query);
+        return data;
+    }
+    public int updatescore(int win,int cash,int id){
+        String query=String.format("UPDATE users SET Win=Win+%d,Cash=Cash+%d  WHERE uid=%d",win,cash,id);
+        dbConnection=new DbConnection();
+        int data=dbConnection.manipulate(query);
+        return data;
+    }
 }
