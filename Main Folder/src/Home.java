@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.sql.*;
 import java.awt.event.*;
+import controller.*;
 public class Home {
 private JFrame frame3;
 private JButton btn1;
@@ -19,11 +20,11 @@ private JLabel img2;
 private JLabel img3;
 private JLabel pp;
 private UsersController user;
- ResultSet data; 
- int cash;
- int win;
- String uname;
- private int id;
+private ResultSet data; 
+private int cash;
+private int win;
+private String uname;
+private int id;
 
   public void Homepage(String email,String pass){
 

@@ -5,7 +5,9 @@ import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import javax.sound.sampled.*;
 import java.util.Random;
-
+import database.*;
+import controller.*;
+import models.*;
 
 public class Signup {
 private Login log1;
@@ -44,8 +46,7 @@ private JLabel img4;
 private JLabel img5;
 private JLabel img6;
 private JLabel img7;
-
-Random ran=new Random();
+private Random ran;
 private JOptionPane pal;
 public void signuppage(){
 frame=new JFrame("SIGNUP");
@@ -269,7 +270,7 @@ private class ButtonClickListener implements ActionListener{
        String gender;
        String id="";
        int uid=0;
-       Random ran=new Random();
+       ran=new Random();
        for(int i=1;i<=4;i++){
          id=id+Integer.toString(ran.nextInt(10));
 
