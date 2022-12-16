@@ -10,6 +10,7 @@ import controller.*;
 import models.*;
 
 public class Signup {
+private Login log1;
 private JFrame frame;
 private JPanel panel;
 private JLabel img1;
@@ -256,7 +257,8 @@ private class ButtonClickListener implements ActionListener{
 
      }
      else if(command.equals("goto")){
-     
+       log1=new Login();
+       log1.Loginpage();
 
      }
      else if(command.equals("signup")){
@@ -301,7 +303,8 @@ private class ButtonClickListener implements ActionListener{
            if(result==1){
             pal=new JOptionPane();
             pal.showMessageDialog(null,"Your account has been sucessfully created");
-            
+            Home home=new Home();
+            home.Homepage(email,pass);
            }
            
          }
