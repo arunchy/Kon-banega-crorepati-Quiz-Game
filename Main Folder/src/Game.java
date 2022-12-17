@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
-// import controller.*;
+import controller.*;
 
 public class Game {
     private JFrame fm;
@@ -26,7 +26,7 @@ public class Game {
     private JLabel money;
     private JButton next;
     private JLabel total;
-    // private UsersController question;
+    private UsersController question;
     private ResultSet data;
     private String qus1;
     private int qid;
@@ -53,20 +53,20 @@ public class Game {
     private JLabel err4;
     private int cash=0;
     private String str;
-    // private int id=1;
+    private int id=1;
     private Clip clip1;
     private AudioInputStream sound1;
     private File audio1;
     private Clip clip2;
     private AudioInputStream sound2;
     private File audio2;
-    // private int userid;
+    private int userid;
     public int win=0;
     public void Gamepage(int uid){
-        // userid=uid;
+        userid=uid;
         try{
-            // question=new UsersController();
-            // data=question.fetchquestion(id); 
+            question=new UsersController();
+            data=question.fetchquestion(id); 
             while(data.next()){
                 qus1=data.getString("Questions");
                 qid=data.getInt("Qid");
@@ -306,8 +306,8 @@ public class Game {
                
                 cash+=1000;
                 win+=1;
-                // UsersController user=new UsersController();
-                //  user.updatescore(win,cash,userid);
+                UsersController user=new UsersController();
+                 user.updatescore(win,cash,userid);
                 str=Integer.toString(cash);
                 total.setText(str);
                 wall1.setVisible(true);
@@ -347,8 +347,8 @@ public class Game {
                 
                 cash+=1000;
                 win+=1;
-                // UsersController user=new UsersController();
-                //  user.updatescore(win,cash,userid);
+                UsersController user=new UsersController();
+                 user.updatescore(win,cash,userid);
                 str=Integer.toString(cash);
                 total.setText(str);
                 wall1.setVisible(true);
@@ -391,8 +391,8 @@ public class Game {
                
                 cash+=1000;
                 win+=1;
-                // UsersController user=new UsersController();
-                // user.updatescore(win,cash,userid);
+                UsersController user=new UsersController();
+                user.updatescore(win,cash,userid);
                 str=Integer.toString(cash);
                 total.setText(str);
                 clip2.start();
@@ -431,8 +431,8 @@ public class Game {
                
                 cash+=1000;
                 win+=1;
-                // UsersController user=new UsersController();
-                //  user.updatescore(win,cash,userid);
+                UsersController user=new UsersController();
+                 user.updatescore(win,cash,userid);
                 str=Integer.toString(cash);
                 total.setText(str);
                 wall1.setVisible(true);
@@ -475,10 +475,10 @@ public class Game {
             err4.setVisible(false);
             wrong.setVisible(false);
 
-            // id+=1;
+            id+=1;
             try{
-                // question=new UsersController();
-                // data=question.fetchquestion(id); 
+                question=new UsersController();
+                data=question.fetchquestion(id); 
                 while(data.next()){
                     qus1=data.getString("Questions");
                     qid=data.getInt("Qid");
