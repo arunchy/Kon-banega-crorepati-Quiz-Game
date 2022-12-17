@@ -132,12 +132,7 @@ public class Game {
      opt1.addActionListener(new ButtonClickListener());
      fm.add(opt1);
 
-     opt2=new JButton(str2);
-     opt2.setFont(new Font("Times New Roman", Font.BOLD, 15));
-     opt2.setActionCommand("opt2");
-     opt2.addActionListener(new ButtonClickListener());
-     opt2.setBounds(900, 360, 200, 35);
-     fm.add(opt2);
+     
 
      opt3=new JButton(str3);
      opt3.setFont(new Font("Times New Roman", Font.BOLD, 15));
