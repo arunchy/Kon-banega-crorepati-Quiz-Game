@@ -283,11 +283,7 @@ public class Game {
    }
  
 
-     fm.getContentPane().setBackground(Color.decode("#A020F0"));
-     fm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-     fm.setSize(500, 500);
-     fm.setLayout(null);
-     fm.setVisible(true);   
+     
     }
 
 
