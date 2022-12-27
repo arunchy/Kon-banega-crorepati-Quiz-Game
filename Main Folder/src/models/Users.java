@@ -9,6 +9,8 @@ public class Users{
     private String user_gender;
     private String user_Password;
     private String user_profilepic;
+	private int win;
+	private int cash;
 
     // creation of public getter and setter --> for student ID
 	public int getUser_id() {
@@ -73,8 +75,20 @@ public class Users{
 	public void setUser_profilepic(String user_profilepic){
       this.user_profilepic=user_profilepic;
 	}
+	public int getCash() {
+		return cash;
+	}
+	public void setCash(int cash) {
+		this.cash = cash;
+	}
+	public int getWin() {
+		return win;
+	}
+	public void setWin(int win) {
+		this.win = win;
+	}
     // creation of public constructor
-    public Users(int user_id, String user_fname,String user_email, String user_contact,String user_age,String user_gender,String user_password,String user_profilepic){
+    public Users(int user_id, String user_fname,String user_email, String user_contact,String user_age,String user_gender,String user_password,String user_profilepic,int win,int cash){
         this.user_id = user_id;
         this.user_fname = user_fname;
 		this.user_email = user_email;
@@ -83,6 +97,8 @@ public class Users{
         this.user_gender =user_gender;
         this.user_Password = user_password;
 		this.user_profilepic=user_profilepic;
+		this.win=win;
+		this.cash=cash;
     }
 
 

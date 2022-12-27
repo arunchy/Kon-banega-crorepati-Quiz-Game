@@ -1,5 +1,6 @@
 package controller;
 import java.sql.ResultSet;
+
 import database.*;
 import models.*;
 
@@ -15,7 +16,9 @@ public class UsersController {
         String gender = users.getUser_gender();
         String password = users.getUser_password();
         String profilepic=users.getUser_profilepic();
-        String insertQuery = String.format("insert into users(uid,Fullname,EmailAddress,ContactNumber,Age,Gender,PW,PP) values(%d,'%s','%s','%s','%s','%s','%s','%s')", id,name,email,contact,age,gender,password,profilepic);
+        int win=users.getWin();
+        int cash=users.getCash();
+        String insertQuery = String.format("insert into users(uid,Fullname,EmailAddress,ContactNumber,Age,Gender,PW,PP,Win,Cash) values(%d,'%s','%s','%s','%s','%s','%s','%s',%d,%d)", id,name,email,contact,age,gender,password,profilepic,win,cash);
         System.out.println(insertQuery);
         dbConnection = new DbConnection();
         int result = dbConnection.manipulate(insertQuery);
@@ -58,5 +61,12 @@ public ResultSet fetchdata(String email,String password){
         dbConnection=new DbConnection();
         int data=dbConnection.manipulate(query);
         return data;
+    }
+    public ResultSet showquestions(){
+        String query=String.format("SELECT * FROM questions");
+        dbConnection=new DbConnection();
+      ResultSet data=dbConnection.retrieve(query);
+      return data;
+
     }
 }
