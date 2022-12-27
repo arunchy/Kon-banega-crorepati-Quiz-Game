@@ -101,7 +101,7 @@ public class Game {
      correct.setBounds(700, 580,180, 180);
      correct.setVisible(false);
      fm.add(correct);
-// hello
+
 
 
 
