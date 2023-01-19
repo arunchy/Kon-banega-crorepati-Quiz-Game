@@ -42,24 +42,29 @@ public class Addquestion {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        try{
-           while(data.next()){
-            txt=data.getInt("Qid")+" "+data.getString("Question");
-            qustext=new JLabel();
-          qustext.setBounds(80,y,350,20);
-          qustext.setText(txt);
-          frame.add(qustext);
-          y+=20;
-
-           }
-        }catch(Exception err){
-            err.printStackTrace();
-        }
+       
 
     frame=new JFrame("Hello");
     pal=new JPanel();
     pal.setBounds(550, 0, 500, 650);
     pal.setBackground(Color.decode("#74b9ff"));
+
+    try {
+        while(data1.next()){
+          txt=data1.getString("Questions");
+          int num=data1.getInt("Qid");
+          txt=num+"."+txt;
+          qustext=new JLabel(txt);
+          qustext.setBounds(40,y,500,20);
+          frame.add(qustext);
+          y+=20;
+
+
+          }
+        
+    } catch (Exception e) {
+        // TODO: handle exception
+    }
     
 
     title=new JLabel();

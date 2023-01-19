@@ -30,6 +30,7 @@ private int id;
 private File imagename;
 private JButton addquestion;
 private  String ppname;
+private JButton edit;
   public void Homepage(String email,String pass){
     imagename=new File("");
     String absolutepath=imagename.getAbsolutePath();
@@ -144,6 +145,13 @@ private  String ppname;
      addquestion.setBounds(1200,12 ,150 ,25 );
      frame3.add(addquestion);
      
+     edit=new JButton("Edit Profile");
+     edit.setBackground(Color.green);
+     edit.setActionCommand("edit");
+     edit.addActionListener(new ButtonClickListener());
+     edit.setBounds(10,12 ,150 ,25 );
+     frame3.add(edit);
+
 
      logout=new JButton("Log Out");
      logout.setBackground(Color.red);
@@ -190,6 +198,9 @@ private  String ppname;
           log.Loginpage();
 
 
+        }else if(command.equals("edit")){
+          UpdateProfile up=new UpdateProfile();
+          up.UpdateProfileScreen(id);
         }
      
 

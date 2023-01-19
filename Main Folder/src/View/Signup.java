@@ -47,6 +47,7 @@ private JLabel img4;
 private JLabel img5;
 private JLabel img6;
 private JLabel img7;
+private JLabel img8;
 private Random ran;
 private JOptionPane pal;
 private File imagename;
@@ -126,6 +127,10 @@ img6.setBounds(660, 600,300, 300);
 img7=new JLabel();
 img7.setIcon(new ImageIcon(getpath+"dogesh7.gif"));
 img7.setBounds(880, 600,300, 300);
+
+// img7=new JLabel();
+// img7.setIcon(new ImageIcon(getpath+"dogesh7.gif"));
+// img7.setBounds(1100, 600,300, 300);
 
 panel=new JPanel();
 panel.setBounds(550, 0, 500, 650);
